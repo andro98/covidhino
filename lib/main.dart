@@ -1,7 +1,12 @@
+import 'package:covidhino/src/view/screens/main_screen.dart';
+import 'package:covidhino/src/view_model/covid_provider/covid_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (_) => CovidProvider(),
+      child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -14,22 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Convidhino',
-            style: TextStyle(
-              fontSize: 30.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ),
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.black12,
-          elevation: 0.0,
-        ),
-
-      ),
+      home:MainScreen(),
     );
   }
 }
