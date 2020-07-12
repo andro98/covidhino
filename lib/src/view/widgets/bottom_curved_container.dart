@@ -4,8 +4,9 @@ class BottomCurvedContainer extends StatelessWidget {
   final double height;
   final Color color;
   final double curveValue;
+  final Widget childWidget;
 
-  BottomCurvedContainer(this.height, this.color, this.curveValue);
+  BottomCurvedContainer(this.height, this.color, this.curveValue, this.childWidget);
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +20,7 @@ class BottomCurvedContainer extends StatelessWidget {
           bottomRight: Radius.circular(curveValue),
         ),
       ),
+      child: childWidget,
     );
   }
 }

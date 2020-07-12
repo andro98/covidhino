@@ -20,7 +20,7 @@ class PreventionIcon extends StatelessWidget {
           subtitle,
           style: TextStyle(
             color: Color(0xff3B3858),
-            fontSize: 15.0,
+            fontSize: 15.0 ,
             fontFamily: 'NotoSans',
           ),
           textAlign: TextAlign.center,

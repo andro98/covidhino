@@ -34,9 +34,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.info_outline,
-            ),
+            icon: Image.asset('assets/img/stats.png'),
             title: Text(
               'Statistics',
               style: bottomNavigationText,
