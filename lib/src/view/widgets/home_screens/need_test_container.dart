@@ -14,7 +14,7 @@ class NeedTestContainer extends StatelessWidget {
     return Center(
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 10.0),
-        height: size.height * 0.50,
+        height: size.height * 0.35,
         width: size.width * 0.90,
         decoration: BoxDecoration(
           color: Color(0xffFFB306),
@@ -39,7 +39,7 @@ class NeedTestContainer extends StatelessWidget {
                         'Need to test Covid-19',
                         style: TextStyle(
                           color: Color(0xff3B3858),
-                          fontSize: 30.0,
+                          fontSize: 20.0,
                           fontFamily: 'NotoSans',
                           fontWeight: FontWeight.bold,
                         ),
@@ -51,7 +51,7 @@ class NeedTestContainer extends StatelessWidget {
                         'There are laboratory tests that can identify the virus that causes COVID-19 in respiratory specimens.',
                         style: TextStyle(
                           color: Color(0xff3B3858),
-                          fontSize: 20.0 ,
+                          fontSize: 15.0 ,
                           fontFamily: 'NotoSans',
                         ),
                       ),
@@ -64,7 +64,7 @@ class NeedTestContainer extends StatelessWidget {
                           'Test Now',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 15.0 ,
+                            fontSize: 10.0 ,
                             fontFamily: 'NotoSans',
                           ),
                         ),
