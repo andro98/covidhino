@@ -1,12 +1,13 @@
-import 'package:covidhino/src/model/entities/world_total_entity.dart';
+
+import 'package:covidhino/src/model/entities/country_total_entity.dart';
 import 'package:covidhino/src/view/widgets/common/loading_widget.dart';
 import 'package:covidhino/src/view/widgets/stats_screen/cases_container.dart';
 import 'package:covidhino/src/view_model/covid_provider/covid_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class StatsCasesWidget extends StatefulWidget {
-  const StatsCasesWidget({
+class CountryStatsCasesWidget extends StatefulWidget {
+  const CountryStatsCasesWidget({
     Key key,
     @required this.size,
   }) : super(key: key);
@@ -14,27 +15,27 @@ class StatsCasesWidget extends StatefulWidget {
   final Size size;
 
   @override
-  _StatsCasesWidgetState createState() => _StatsCasesWidgetState();
+  _CountryStatsCasesWidgetState createState() => _CountryStatsCasesWidgetState();
 }
 
-class _StatsCasesWidgetState extends State<StatsCasesWidget> {
+class _CountryStatsCasesWidgetState extends State<CountryStatsCasesWidget> {
   @override
   void initState() {
     super.initState();
-    Provider.of<CovidProvider>(context, listen: false).getWorldTotal();
+    Provider.of<CovidProvider>(context, listen: false).getCountryTotal();
   }
 
   @override
   Widget build(BuildContext context) {
     return Consumer <CovidProvider>(
         builder: (context, model, child) {
-          switch (model.allWorldStatus) {
+          switch (model.allCountryStatus) {
             case Status.Error:
               return Center(
-                child: Text(model.worldTotalStruct.errorMessage),
+                child: Text(model.errorMessage),
               );
             case Status.Success:
-              return successWidget(model.worldTotalStruct.worldTotal);
+              return successWidget(model.countryTotal.last);
             case Status.Loading:
             default:
               return LoadingWidget(Colors.white);
@@ -44,7 +45,7 @@ class _StatsCasesWidgetState extends State<StatsCasesWidget> {
   }
 
 
-  Widget successWidget(WorldTotal wt) {
+  Widget successWidget(CountryTotal ct) {
     return Column(
       children: <Widget>[
         Row(
@@ -53,13 +54,13 @@ class _StatsCasesWidgetState extends State<StatsCasesWidget> {
             CasesContainer(
               backgroundColor: Color(0xff54E8FF),
               casesName: 'Total Cases',
-              numberOfCases: wt.totalConfirmed,
+              numberOfCases: ct.confirmed,
               size: widget.size,
             ),
             CasesContainer(
               backgroundColor: Color(0xffFFCE47),
               casesName: 'Active Cases',
-              numberOfCases: 100000,
+              numberOfCases: ct.active,
               size: widget.size,
             ),
           ],
@@ -70,13 +71,13 @@ class _StatsCasesWidgetState extends State<StatsCasesWidget> {
             CasesContainer(
               backgroundColor: Color(0xff4DFF5F),
               casesName: 'Recoverd Cases',
-              numberOfCases: wt.totalRecovered,
+              numberOfCases: ct.recovered,
               size: widget.size,
             ),
             CasesContainer(
               backgroundColor: Color(0xffFF4D4D),
               casesName: 'Deaths',
-              numberOfCases: wt.totalDeaths,
+              numberOfCases: ct.deaths,
               size: widget.size,
             ),
           ],

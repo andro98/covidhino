@@ -18,7 +18,7 @@ class CovidService {
     final url = 'https://api.covid19api.com/total/country/egypt';
     final res = await http.get(url);
     if (res.statusCode == 200) {
-      return countryTotalFromJson(json.decode(res.body));
+      return  countryTotalFromJson(json.decode(res.body));
     } else {
       throw ("Failed to retrieve data");
     }

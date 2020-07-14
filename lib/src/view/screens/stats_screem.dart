@@ -1,4 +1,6 @@
 import 'package:covidhino/src/view/widgets/bottom_curved_container.dart';
+import 'package:covidhino/src/view/widgets/stats_screen/map_view_widget.dart';
+import 'package:covidhino/src/view/widgets/stats_screen/graph_view_widget.dart';
 import 'package:covidhino/src/view/widgets/stats_screen/stats_top_container.dart';
 import 'package:covidhino/src/view_model/covid_provider/covid_provider.dart';
 import 'package:flutter/material.dart';
@@ -18,11 +20,9 @@ class StatsScreen extends StatelessWidget {
             20.0,
             StatsTopContainer(),
           ),
-          Center(
-            child: Text(Provider.of<CovidProvider>(context).isWorldCases
-                ? 'World'
-                : 'MyCountry'),
-          ),
+          Provider.of<CovidProvider>(context).isWorldCases == 0
+              ? MapViewWidget()
+              : GraphViewWdiget(),
         ],
       ),
     );
