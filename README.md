@@ -62,4 +62,4 @@ A Covid-19 Application Tracker made with Flutter for both android and ios
 </table>
 
 ## Demo
-![Covid-19 Demo](./demo/convidhino.gif)
+![Covid-19 Demo](./demo/Covidhino.gif)
