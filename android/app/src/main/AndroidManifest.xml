@@ -8,7 +8,7 @@
 
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/launcher_icon"
         android:label="covidhino">
         <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAE5pUZRR6ToAFahoyJIEvqGZSZww-Z5T4"/>

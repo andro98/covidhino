@@ -19,10 +19,16 @@ dependencies:
   intl: ^0.16.1
   toggle_switch: ^0.1.4
   google_maps_flutter: ^0.5.28+1
+  flutter_launcher_icons: ^0.7.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/img/icon.png"
 
 flutter:
 
